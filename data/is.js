@@ -1,40 +1,9 @@
-function is.num (type)
-{
-    typeof type === 'number'
-}
-function is.nan (type)
-{
-    type.isNaN()
-}
-function is.str (type)
-{
-    typeof type === 'str'
-}
-
-function is.bool (type)
-{
-    typeof foo === 'boolean'
-}
-
-function is.undef (type)
-{
-    typeof foo === 'undefined'
-}
-
-function is.def (type)
-{
-    typeof foo != 'undefined'
-}
-
-function is.arr (type)
-{
-    arr.isArray()
-}
-function is.thursty (type)
-{
-    type === true
-}
-function is.falsy (type)
-{
-    type === false
-}
+is.num = (typ) => typeof typ === 'number'
+is.nan = (typ) => typ.isNaN()
+is.str = (typ) => typeof typ === 'str'
+is.bool = (typ) => typeof typ === 'boolean'
+is.undef = (typ) => typeof typ === 'undefined'
+is.def = (typ) => typeof typ !== 'undefined'
+is.arr = (typ) => arr.isArray()
+is.truthy = (typ) =>  typ === true
+is.falsy  = (typ) =>  typ === false

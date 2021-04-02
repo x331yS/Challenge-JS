@@ -1,3 +1,4 @@
+const is = {}
 is.num = (typ) => typeof typ === 'number'
 is.nan = (typ) => Number.isNaN(typ)
 is.str = (typ) => typeof typ === 'str'
@@ -9,3 +10,6 @@ is.obj = (arg) => typeof(arg) === 'object' ? toString.call(arg).slice(8, -1) ===
 is.fun = (typ) => typeof(typ) === 'function' ? typeof(typ) : ""
 is.truthy = (typ) =>  typ === true
 is.falsy  = (typ) =>  typ === false
+let x = {};
+
+console.log(is.undef(NaN))

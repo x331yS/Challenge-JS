@@ -9,9 +9,7 @@ function sign(num) {
     }
     return -1
 }
-function sameSign(num1, num2){
-    if (num1 === num2){
-        return true
-    }
-    return false
+
+function sameSign(num1, num2) {
+    return sign(num2) === sign(num1);
 }

@@ -6,5 +6,3 @@ function repeat(str, num) {
     return newstr
 
 }
-
-console.log(repeat('abc', 8))

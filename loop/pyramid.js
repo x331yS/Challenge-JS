@@ -13,3 +13,5 @@ const pyramid = (char, depth) => {
 
     return result
 }
+
+console.log(pyramid('❤ ', 23))

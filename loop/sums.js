@@ -21,4 +21,4 @@ function sums(n) {
     return output
 }
 
-console.log(sums(1))
+console.log(sums(17))

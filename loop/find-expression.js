@@ -11,12 +11,13 @@ function findExpression(max) {
                 n: v.n + 4,
                 ops: v.ops + " +4",
             };
-            if (add4.n <= max) {
-                newVartiants.push(add4);
-            }
             if (mul2.n <= max) {
                 newVartiants.push(mul2);
             }
+            if (add4.n <= max) {
+                newVartiants.push(add4);
+            }
+
         });
         if (newVartiants[0] && newVartiants[0].n === max) {
             variants = [newVartiants[0]];
@@ -26,4 +27,4 @@ function findExpression(max) {
     }
     return variants[0] ? variants[0].ops : undefined;
 }
-console.log(findExpression(7))
+console.log(findExpression(124))

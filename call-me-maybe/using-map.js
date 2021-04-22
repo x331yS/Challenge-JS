@@ -21,4 +21,14 @@ function trimTemp(arr) {
     });
 }
 
-const tempForecasts = (objArray) => objArray.map(obj => fahrenheitToCelsius(obj.temperature.replace(/ /g, '').split('°F')[0]) + '°Celsius in ' + obj.city + ', ' + toUpper(obj.state))
+function tempForecasts(arr) {
+    return arr.map(function (obj) {
+        return (
+            fahrenheitToCelsius(trimTemp2([obj])) +
+            "elsius in " +
+            citiesOnly([obj]) +
+            ", " +
+            upperCasingStates([obj["state"]])
+        );
+    });
+}

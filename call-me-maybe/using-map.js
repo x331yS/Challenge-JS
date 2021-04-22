@@ -15,7 +15,10 @@ function upperCasingStates(arr) {
 const fahrenheitToCelsius = (arr) => arr.map(str => Math.floor(((str.split("°F")[0] - 32) * 5) / 9) + "°C");
 
 function trimTemp(arr) {
-    return arr.map(abcdef => Object.assign(abcdef, {temperature: abcdef['temperature'].replace(/\s+/g, '')}))
+    return arr.map(function (obj) {
+        obj["temperature"] = obj["temperature"].match(/\S/g).join("");
+        return obj;
+    });
 }
 
 const tempForecasts = (objArray) => objArray.map(obj => fahrenheitToCelsius(obj.temperature.replace(/ /g, '').split('°F')[0]) + '°Celsius in ' + obj.city + ', ' + toUpper(obj.state))

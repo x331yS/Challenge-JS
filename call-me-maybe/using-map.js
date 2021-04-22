@@ -12,7 +12,11 @@ function upperCasingStates(arr) {
     });
 }
 
-const fahrenheitToCelsius = (arr) => arr.map(str => Math.floor(((str.split("°F")[0] - 32) * 5) / 9) + "°C");
+function fahrenheitToCelsius(arr) {
+    return arr.map(function (str) {
+        return Math.floor(((str.split("°F")[0] - 32) * 5) / 9) + "°C";
+    });
+}
 
 function trimTemp(arr) {
     return arr.map(function (obj) {

@@ -1,1 +1,1 @@
-let forEach = (arr, func) => arr.map(func);
+const forEach = (arr, func) => arr.map(func);

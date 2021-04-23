@@ -16,11 +16,4 @@ const some = (arr,func) => {
     return false
 }
 
-const none = (arr,func) => {
-    for (let i of arr) {
-        if (func(i)) {
-            return false
-        }
-    }
-    return true
-}
+const none = (array, func) => !some(array,func)

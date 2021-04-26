@@ -1,18 +1,25 @@
-export {generateLetters}
-
-const generateLetters = () => {
-    let weight = 300
-    for (let i = 11; i < 131; i++) {
-        let char = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.charAt(Math.floor(Math.random() *26))
-        let elem = document.createElement('div')
-        elem.textContent = char
-        elem.style.fontSize = i+'px'
-        elem.style.fontWeight = weight
-        document.body.appendChild(elem);
-        if (i == 51) {
-            weight += 100
-        } else if (i == 91) {
-            weight += 200
+export const random = (min, max) => {
+    min = Math.ceil(min);
+    max = Math.floor(max);
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+export const generateLetters = () => {
+    let last = document.querySelector("body");
+    let alphabet = "abcdefghijklmnopqrstuvwxyz".toUpperCase();
+    for (let ind = 0; ind < 120; ind++) {
+        const newDiv = document.createElement("div");
+        newDiv.textContent = alphabet[random(0, 25)];
+        if (ind < 40) {
+            newDiv.style.cssText =
+                "font-size: " + (11 + ind) + "px; font-weight: " + 300 + ";";
+        } else if (ind < 80) {
+            newDiv.style.cssText =
+                "font-size: " + (11 + ind) + "px; font-weight: " + 400 + ";";
+        } else {
+            newDiv.style.cssText =
+                "font-size: " + (11 + ind) + "px; font-weight: " + 600 + ";";
         }
+        last.append(newDiv);
+        //last = newDiv;
     }
-}
+};

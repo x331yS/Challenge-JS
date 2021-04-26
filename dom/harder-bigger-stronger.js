@@ -1,3 +1,5 @@
+export {generateLetters}
+
 const generateLetters = () => {
     let weight = 300
     for (let i = 11; i < 131; i++) {
@@ -14,5 +16,3 @@ const generateLetters = () => {
         }
     }
 }
-
-export {generateLetters}

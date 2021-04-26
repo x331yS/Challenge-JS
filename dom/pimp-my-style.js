@@ -1,3 +1,4 @@
+import { styles } from './data.js'
 export { pimp }
 
 function pimp() {

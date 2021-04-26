@@ -1,17 +1,19 @@
+export {build,repair,destroy}
+
 const build = (num) => {
-    let c = 1
-    let m = 2
-    let iID = setInterval(function(){
+    let aDude = 1
+    let bDude = 2
+    let ID = setInterval(function(){
         let elem = document.createElement('div')
-        elem.id = 'brick-'+c
+        elem.id = 'brick-'+aDude
         document.body.appendChild(elem)
-        if (c==m) {
+        if (aDude==bDude) {
             document.getElementById(elem.id).setAttribute('data-foundation', "true");
-            m += 3
-        } else if (c == num) {
-            clearInterval(iID)
+            bDude += 3
+        } else if (aDude == num) {
+            clearInterval(ID)
         }
-        c++
+        aDude++
     },100)
 }
 
@@ -22,5 +24,3 @@ const repair = (...arr) => {
 const destroy = () => {
     document.querySelectorAll('div')[document.querySelectorAll('div').length-1].remove()
 }
-
-export {build,repair,destroy}

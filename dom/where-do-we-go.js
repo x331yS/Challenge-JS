@@ -1,20 +1,12 @@
-import { places } from './data.js'
+import { places } from './where-do-we-go.data.js'
 
 export { explore }
-
-
-const createDirection = () => {
-    let el = document.createElement("div");
-    el.classList.add("direction");
-    el.textContent = "S";
-    document.body.append(el);
-};
 
 function explore() {
     let sortedPlaces = sort(places)
     document.body.style.overflowX = 'hidden';
 
-    creatwtfDude(sortedPlaces)
+    createSections(sortedPlaces)
     createDirection()
 
     let sections = document.querySelectorAll('section');
@@ -49,17 +41,6 @@ function explore() {
     });
 }
 
-function creatwtfDude(sortedPlaces) {
-    sortedPlaces.forEach((place) => {
-        let section = document.createElement('section');
-        section.style.background = `url(./images/${place.name.toLowerCase().split(',')[0].replace(/ /g, '-')}.jpg)`;
-        section.style.backgroundRepeat = 'no-repeat';
-        section.style.backgroundSize = 'cover';
-        section.style.backgroundPosition = 'center';
-        document.body.append(section);
-    });
-}
-
 function sort(arr) {
     let array = [...arr]
     array.sort((a, b) => {
@@ -82,4 +63,22 @@ function getNorth(obj) {
         north = Number(north.slice(0, 5)) * -1
     }
     return north
+}
+
+function createSections(sortedPlaces) {
+    sortedPlaces.forEach((place) => {
+        let section = document.createElement('section');
+        section.style.background = `url(./images/${place.name.toLowerCase().split(',')[0].replace(/ /g, '-')}.jpg)`;
+        section.style.backgroundRepeat = 'no-repeat';
+        section.style.backgroundSize = 'cover';
+        section.style.backgroundPosition = 'center';
+        document.body.append(section);
+    });
+}
+
+function createDirection() {
+    let direction = document.createElement('div')
+    direction.className = 'direction';
+    direction.textContent = 'N';
+    document.body.append(direction);
 }

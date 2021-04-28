@@ -1,4 +1,4 @@
-import { gossips } from './gossip_grid.data.js'
+import { gossips } from './gossip-grid.data.js'
 
 export { grid }
 

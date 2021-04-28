@@ -72,6 +72,7 @@ function moveCircle() {
     })
 }
 
+
 function isInFrame(x, y) {
     let boxes = document.getElementsByClassName('box')
     let box = boxes[boxes.length - 1]
